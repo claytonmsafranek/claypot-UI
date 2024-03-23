@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from '../shared/models/product';
 import { ShopService } from './shop.service';
 import { CommonModule } from '@angular/common';
+import { ProductItemComponent } from './product-item/product-item.component';
 
 @Component({
   selector: 'app-shop',
@@ -9,7 +10,8 @@ import { CommonModule } from '@angular/common';
   templateUrl: './shop.component.html',
   styleUrl: './shop.component.scss',
   imports: [
-    CommonModule
+    CommonModule,
+    ProductItemComponent
   ]
 })
 export class ShopComponent implements OnInit {
