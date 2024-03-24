@@ -28,20 +28,16 @@
     </section>
     <section class="col-9">
       <div class="d-flex justify-content-between align-items-center pb-2">
-        <header>
-          <span *ngIf="totalCount > 0">Showing
-            <strong>
-              {{(shopParamns.pageNumber - 1) * shopParamns.pageSize + 1}} -
-              {{shopParamns.pageNumber * shopParamns.pageSize
-                > totalCount ? totalCount : shopParamns.pageNumber * shopParamns.pageSize
-              }}
-            </strong> of <strong>{{totalCount}}</strong> Results</span>
-            <span *ngIf="totalCount === 0"> There are <strong>0</strong> results for this filter.</span>
-        </header>
+        <app-paging-header
+          [totalCount]="totalCount"
+          [pageNumber]="shopParamns.pageNumber"
+          [pageSize]="shopParamns.pageSize">
+        </app-paging-header>
+
         <div class="d-flex mt-2">
-          <input type="text" class="form-control me-2" placeholder="Search">
-          <button class="btn btn-outline-primary mx-2">Search</button>
-          <button class="btn btn-outline-success">Reset</button>
+          <input (keyup.enter)="onSearch()" type="text" class="form-control me-2" placeholder="Search" #search>
+          <button (click)="onSearch()" class="btn btn-outline-primary mx-2">Search</button>
+          <button (click)="onReset()" class="btn btn-outline-success">Reset</button>
         </div>
       </div>
 
@@ -52,17 +48,12 @@
       </div>
 
       <div class="d-flex justify-content-center my-3" *ngIf="totalCount > 0">
-        <pagination
-          [boundaryLinks]="true"
-          [totalItems]="totalCount"
-          [itemsPerPage]="shopParamns.pageSize"
-          [maxSize]="10"
-          (pageChanged)="onPageChanges($event)"
-          previousText="&lsaquo;"
-          nextText="&rsaquo;"
-          firstText="&laquo;"
-          lastText="&raquo;">
-        </pagination>
+        <app-pager
+          [totalCount]="totalCount"
+          [pageSize]="shopParamns.pageSize"
+          (pageChanged)="onPageChanged($event)"
+        >
+        </app-pager>
       </div>
 
     </section>
