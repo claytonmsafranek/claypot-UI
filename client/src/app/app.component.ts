@@ -3,6 +3,8 @@ import { NavBarComponent } from './core/nav-bar/nav-bar.component';
 import { ShopComponent } from './shop/shop.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
+import { HomeModule } from './home/home.module';
+import { RouterModule } from '@angular/router';
 
 @Component({
     selector: 'app-root',
@@ -12,7 +14,9 @@ import { CommonModule } from '@angular/common';
     imports: [
       NavBarComponent,
       ShopComponent,
-      CommonModule
+      CommonModule,
+      HomeModule,
+      RouterModule
     ]
 })
 
