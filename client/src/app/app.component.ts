@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { NavBarComponent } from './core/nav-bar/nav-bar.component';
-import { ShopComponent } from './shop/shop.component';
-import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { HomeModule } from './home/home.module';
 import { RouterModule } from '@angular/router';
@@ -13,7 +11,6 @@ import { RouterModule } from '@angular/router';
     styleUrl: './app.component.scss',
     imports: [
       NavBarComponent,
-      ShopComponent,
       CommonModule,
       HomeModule,
       RouterModule
