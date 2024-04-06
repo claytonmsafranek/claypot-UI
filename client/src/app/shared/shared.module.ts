@@ -5,18 +5,16 @@ import { PagingHeaderComponent } from './paging-header/paging-header.component';
 import { PagerComponent } from './pager/pager.component';
 
 @NgModule({
-  declarations: [
-    PagingHeaderComponent,
-    PagerComponent
-  ],
-  imports: [
-    CommonModule,
-    PaginationModule.forRoot()
-  ],
-  exports: [
-    PaginationModule,
-    PagingHeaderComponent,
-    PagerComponent
-  ]
+    imports: [
+        CommonModule,
+        PaginationModule.forRoot(),
+        PagingHeaderComponent,
+        PagerComponent
+    ],
+    exports: [
+        PaginationModule,
+        PagingHeaderComponent,
+        PagerComponent
+    ]
 })
 export class SharedModule { }

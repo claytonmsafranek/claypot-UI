@@ -1,16 +1,20 @@
 import { Component } from '@angular/core';
 import { environemnt } from '../../../environments/environment';
 import { HttpClient } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-test-error',
   standalone: true,
-  imports: [],
+  imports: [
+    CommonModule
+  ],
   templateUrl: './test-error.component.html',
   styleUrl: './test-error.component.scss'
 })
 export class TestErrorComponent {
   baseUrl = environemnt.apiUrl;
+  validationErrors: string[] = [];
 
   constructor(private http: HttpClient) {}
 
@@ -41,7 +45,10 @@ export class TestErrorComponent {
   get400ValidationError() {
     this.http.get(this.baseUrl + 'products/fortytwo').subscribe({
       next: response => console.log(response),
-      error: error => console.log(error)
+      error: error => {
+        console.log(error)
+        this.validationErrors = error.errors
+      }
 
     })
   }
