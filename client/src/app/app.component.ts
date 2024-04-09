@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { ToastrModule } from 'ngx-toastr';
 import { HttpClientModule } from '@angular/common/http';
+import { SectionHeaderComponent } from './core/section-header/section-header.component';
 
 @Component({
     selector: 'app-root',
@@ -16,7 +17,8 @@ import { HttpClientModule } from '@angular/common/http';
     CommonModule,
     RouterModule,
     ToastrModule,
-    HttpClientModule
+    HttpClientModule,
+    SectionHeaderComponent
 ]
 })
 
