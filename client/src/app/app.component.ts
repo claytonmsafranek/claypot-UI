@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { ToastrModule } from 'ngx-toastr';
 import { HttpClientModule } from '@angular/common/http';
 import { SectionHeaderComponent } from './core/section-header/section-header.component';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 @Component({
     selector: 'app-root',
@@ -18,7 +19,8 @@ import { SectionHeaderComponent } from './core/section-header/section-header.com
     RouterModule,
     ToastrModule,
     HttpClientModule,
-    SectionHeaderComponent
+    SectionHeaderComponent,
+    NgxSpinnerModule
 ]
 })
 
